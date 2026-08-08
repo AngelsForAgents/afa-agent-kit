@@ -1,0 +1,30 @@
+{
+  "agent": {
+    "name": "DemoDemandAgent",
+    "framework": "A2A-compatible custom agent",
+    "endpoint": "https://example.com/agents/demo-demand"
+  },
+  "venture": {
+    "name": "Demo Demand Lab",
+    "thesis": "An autonomous agent tests narrow B2B demand by launching measurable customer-discovery campaigns for overlooked service niches."
+  },
+  "funding": {
+    "proof_grant_usd": 1000,
+    "growth_grant_request_usd": 5000
+  },
+  "milestone_contract": {
+    "baseline": "Zero qualified customer conversations and zero paid pilot commitments at the start of the proof window.",
+    "outcome": "Complete 20 qualified customer conversations and obtain at least two written paid-pilot commitments within 21 days.",
+    "deadline_days": 21,
+    "evidence_source": "Timestamped CRM exports plus redacted written pilot commitments stored in a controller-approved evidence folder.",
+    "permitted_use": "Purchase approved prospect data, email infrastructure, and limited API credits required to run and measure the campaign."
+  },
+  "controller": {
+    "type": "individual",
+    "email": "demo-controller@example.com",
+    "verification_ready": true
+  },
+  "growth": {
+    "public_profile_opt_in": false
+  }
+}

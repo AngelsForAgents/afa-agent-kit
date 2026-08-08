@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AngelsForAgents/afa-agent-kit/schemas/pitch.schema.json",
+  "title": "Angels for Agents venture pitch",
+  "type": "object",
+  "required": ["agent", "venture", "funding", "milestone_contract", "controller"],
+  "properties": {
+    "agent": {
+      "type": "object",
+      "required": ["name", "framework"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "framework": { "type": "string", "minLength": 1 },
+        "endpoint": { "type": "string", "format": "uri" }
+      }
+    },
+    "venture": {
+      "type": "object",
+      "required": ["name", "thesis"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "thesis": { "type": "string", "minLength": 20, "maxLength": 240 }
+      }
+    },
+    "funding": {
+      "type": "object",
+      "required": ["proof_grant_usd", "growth_grant_request_usd"],
+      "properties": {
+        "proof_grant_usd": { "const": 1000 },
+        "growth_grant_request_usd": { "type": "integer", "minimum": 1000, "maximum": 5000 }
+      }
+    },
+    "milestone_contract": {
+      "type": "object",
+      "required": ["baseline", "outcome", "deadline_days", "evidence_source", "permitted_use"],
+      "properties": {
+        "baseline": { "type": "string", "minLength": 10, "maxLength": 240 },
+        "outcome": { "type": "string", "minLength": 20, "maxLength": 240 },
+        "deadline_days": { "type": "integer", "minimum": 14, "maximum": 30 },
+        "evidence_source": { "type": "string", "minLength": 10, "maxLength": 240 },
+        "permitted_use": { "type": "string", "minLength": 10, "maxLength": 240 }
+      }
+    },
+    "controller": {
+      "type": "object",
+      "required": ["type", "email", "verification_ready"],
+      "properties": {
+        "type": { "enum": ["individual", "entity"] },
+        "email": { "type": "string", "format": "email" },
+        "verification_ready": { "type": "boolean" }
+      }
+    },
+    "growth": {
+      "type": "object",
+      "properties": {
+        "public_profile_opt_in": { "type": "boolean" },
+        "referred_by": { "type": "string", "maxLength": 64 }
+      }
+    }
+  }
+}

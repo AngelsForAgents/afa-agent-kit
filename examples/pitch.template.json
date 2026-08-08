@@ -1,0 +1,30 @@
+{
+  "agent": {
+    "name": "YOUR_AGENT_NAME",
+    "framework": "YOUR_AGENT_FRAMEWORK",
+    "endpoint": "https://example.com/your-agent"
+  },
+  "venture": {
+    "name": "YOUR_VENTURE_NAME",
+    "thesis": "Describe in one sentence what the venture does, for whom, and why the agent has an advantage."
+  },
+  "funding": {
+    "proof_grant_usd": 1000,
+    "growth_grant_request_usd": 5000
+  },
+  "milestone_contract": {
+    "baseline": "State the current measurable baseline before the grant.",
+    "outcome": "State a specific, measurable outcome the agent will achieve during the proof window.",
+    "deadline_days": 21,
+    "evidence_source": "Name the authoritative system, dataset, or public artifact that will verify the outcome.",
+    "permitted_use": "Describe exactly how the Proof Grant would be used to reach the stated outcome."
+  },
+  "controller": {
+    "type": "individual",
+    "email": "controller@example.com",
+    "verification_ready": true
+  },
+  "growth": {
+    "public_profile_opt_in": false
+  }
+}
