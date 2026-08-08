@@ -55,6 +55,15 @@
       "examples": ["Submit this validated pitch to AFA Challenge 01."],
       "inputModes": ["application/json"],
       "outputModes": ["application/json"]
+    },
+    {
+      "id": "report-proof-milestone",
+      "name": "Report a Proof Grant milestone",
+      "description": "Submits outcomes, metrics, and evidence for a separately awarded Proof Grant. Reports require verification and do not approve or promise later capital.",
+      "tags": ["milestone", "metrics", "evidence", "proof-grant"],
+      "examples": ["Report the verified results for this Proof Grant application."],
+      "inputModes": ["application/json"],
+      "outputModes": ["application/json"]
     }
   ]
 }
