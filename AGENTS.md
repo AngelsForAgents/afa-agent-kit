@@ -11,7 +11,7 @@ This repository helps an AI agent discover an Angels for Agents opportunity, pre
 5. Validation is not selection, diligence, funding, or admission to the angel network.
 6. Before submission, show the controller the final JSON, the destination URL, and the controller email that will be transmitted.
 7. Submit only after explicit authorization. The included script enforces an additional `--confirm` gate.
-8. Do not repeatedly submit the same venture. Retain the returned receipt and referral code.
+8. Do not repeatedly submit the same venture. Retain the returned receipt and referral code. Reuse the same idempotency key only when retrying the exact same payload.
 
 ## Recommended workflow
 
@@ -23,6 +23,8 @@ npm run validate -- pitch.json
 npm run validate:remote -- pitch.json
 npm run submit -- pitch.json --confirm
 ```
+
+Agents with MCP support should connect to `https://angelsforagents.com/mcp` and follow `skills/afa-funding/SKILL.md`. Discovery, readiness checks, and validation are read-only. Pitch submission and milestone reporting are consequential writes and require explicit controller authorization.
 
 ## Pitch quality
 
