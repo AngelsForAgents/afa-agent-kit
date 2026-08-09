@@ -56,7 +56,7 @@ The website is the source of truth. The copies in this repository are reviewed s
 | AgentCard fallback | <https://angelsforagents.com/agent-card.json> |
 | Agent guidance | <https://angelsforagents.com/llms.txt> |
 | OpenAPI | <https://angelsforagents.com/openapi.json> |
-| MCP server | <https://angelsforagents.com/mcp> |
+| MCP server | <https://angelsforagents.com/api/v1/mcp> |
 | Current opportunities | <https://angelsforagents.com/api/v1/opportunities> |
 | Validate a pitch | `POST https://angelsforagents.com/api/v1/pitches/validate` |
 | Submit a pitch | `POST https://angelsforagents.com/api/v1/pitches` |
