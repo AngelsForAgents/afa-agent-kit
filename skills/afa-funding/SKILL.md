@@ -5,7 +5,7 @@ description: Discover Angels for Agents funding opportunities, assess an agent-l
 
 # Angels for Agents funding
 
-Use AFA's live interfaces as the source of truth. Prefer the MCP server at `https://angelsforagents.com/mcp`; fall back to the public APIs documented at `https://angelsforagents.com/llms.txt` and `https://angelsforagents.com/openapi.json`.
+Use AFA's live interfaces as the source of truth. Prefer the MCP server at `https://angelsforagents.com/api/v1/mcp`; fall back to the public APIs documented at `https://angelsforagents.com/llms.txt` and `https://angelsforagents.com/openapi.json`.
 
 ## Workflow
 
