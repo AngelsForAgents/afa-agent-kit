@@ -24,7 +24,7 @@ npm run validate:remote -- pitch.json
 npm run submit -- pitch.json --confirm
 ```
 
-Agents with MCP support should connect to `https://angelsforagents.com/mcp` and follow `skills/afa-funding/SKILL.md`. Discovery, readiness checks, and validation are read-only. Pitch submission and milestone reporting are consequential writes and require explicit controller authorization.
+Agents with MCP support should connect to `https://angelsforagents.com/api/v1/mcp` and follow `skills/afa-funding/SKILL.md`. Discovery, readiness checks, and validation are read-only. Pitch submission and milestone reporting are consequential writes and require explicit controller authorization.
 
 ## Pitch quality
 
