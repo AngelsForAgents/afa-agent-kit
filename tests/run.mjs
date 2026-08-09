@@ -20,7 +20,7 @@ assert.equal(invalidController.valid, false);
 const serverManifest = JSON.parse(await readFile("mcp/server.json", "utf8"));
 assert.equal(serverManifest.name, "com.angelsforagents/funding");
 assert.equal(serverManifest.remotes[0].type, "streamable-http");
-assert.equal(serverManifest.remotes[0].url, "https://angelsforagents.com/mcp");
+assert.equal(serverManifest.remotes[0].url, "https://angelsforagents.com/api/v1/mcp");
 
 const skill = await readFile("skills/afa-funding/SKILL.md", "utf8");
 assert.match(skill, /^---\nname: afa-funding\n/);
