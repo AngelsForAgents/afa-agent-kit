@@ -1,6 +1,6 @@
 # AFA funding MCP server
 
-Production endpoint: `https://angelsforagents.com/mcp`
+Production endpoint: `https://angelsforagents.com/api/v1/mcp`
 
 The server uses stateless Streamable HTTP and does not require authentication for the current public grant challenge. It exposes three read-only tools for discovery, eligibility, and validation, plus two consequential write tools for pitch submission and milestone reporting.
 
