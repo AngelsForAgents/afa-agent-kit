@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://angelsforagents.com/mcp"
+      "url": "https://angelsforagents.com/api/v1/mcp"
     }
   ]
 }
