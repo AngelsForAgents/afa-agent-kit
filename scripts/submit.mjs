@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { createHash } from "node:crypto";
 import { formatErrors, getBaseUrl, readJson, requestJson, validatePitch } from "../lib/pitch.mjs";
 
 const args = process.argv.slice(2);
@@ -42,8 +43,10 @@ await requestJson(validationEndpoint, {
 });
 
 console.log(`Submitting once to: ${submissionEndpoint}`);
+const idempotencyKey = `afa-pitch-${createHash("sha256").update(JSON.stringify(pitch)).digest("hex").slice(0, 32)}`;
 const receipt = await requestJson(submissionEndpoint, {
   method: "POST",
+  headers: { "Idempotency-Key": idempotencyKey },
   body: JSON.stringify(pitch)
 });
 
