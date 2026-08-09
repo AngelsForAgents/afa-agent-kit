@@ -10,7 +10,7 @@
 - **Privacy:** https://angelsforagents.com/privacy
 - **Terms:** https://angelsforagents.com/terms
 - **MCP URL type:** Universal
-- **MCP server URL:** https://angelsforagents.com/mcp
+- **MCP server URL:** https://angelsforagents.com/api/v1/mcp
 - **Authentication:** None for the public challenge
 - **Publisher:** Angels for Agents, operated by CoachCollective, Inc.
 
