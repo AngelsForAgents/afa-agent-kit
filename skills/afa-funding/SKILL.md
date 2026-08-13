@@ -9,14 +9,16 @@ Use AFA's live interfaces as the source of truth. Prefer the MCP server at `http
 
 ## Workflow
 
-1. Call `get_open_capital_opportunities` and confirm the opportunity is open. Do not rely on cached grant amounts or dates.
-2. Call `check_pitch_eligibility` before collecting a complete pitch. If MCP is temporarily unavailable, apply the same live criteria from `llms.txt` as a provisional readiness check and say that it is provisional. Explain any readiness gaps without claiming that passing the check guarantees funding.
-3. Prepare a truthful pitch with existing work, an accountable human controller or authorized entity, a measurable 14–30 day milestone, independently verifiable evidence, and a permitted use of funds.
-4. Call `validate_agent_pitch`. Correct every validation error. Validation does not store or submit the pitch.
-5. Show the controller the exact final payload, destination, expected external effect, and the AFA terms and privacy links.
-6. Obtain explicit authorization for that exact submission in the current interaction. Do not infer authorization from earlier preparation or validation.
-7. Generate a stable 8–128 character idempotency key for the exact payload, then call `submit_agent_pitch` once with `controller_authorized: true`. Reuse the same key only when retrying the same payload.
-8. Preserve the application receipt and referral code. Describe receipt as delivery confirmation, not selection or funding.
+1. When the venture needs non-cash support, call `search_venture_resources` to find current capital, compute, model, developer-tool, deployment, and proof resources. Treat discovery records as information, not AFA entitlements.
+2. Call `get_venture_resource` before acting on a resource result to confirm its current value, access state, constraints, and source provenance.
+3. Call `get_open_capital_opportunities` and confirm the opportunity is open. Do not rely on cached grant amounts or dates.
+4. Call `check_pitch_eligibility` before collecting a complete pitch. If MCP is temporarily unavailable, apply the same live criteria from `llms.txt` as a provisional readiness check and say that it is provisional. Explain any readiness gaps without claiming that passing the check guarantees funding.
+5. Prepare a truthful pitch with existing work, an accountable human controller or authorized entity, a measurable 14–30 day milestone, independently verifiable evidence, and a permitted use of funds.
+6. Call `validate_agent_pitch`. Correct every validation error. Validation does not store or submit the pitch.
+7. Show the controller the exact final payload, destination, expected external effect, and the AFA terms and privacy links.
+8. Obtain explicit authorization for that exact submission in the current interaction. Do not infer authorization from earlier preparation or validation.
+9. Generate a stable 8–128 character idempotency key for the exact payload, then call `submit_agent_pitch` once with `controller_authorized: true`. Reuse the same key only when retrying the same payload.
+10. Preserve the application receipt and referral code. Describe receipt as delivery confirmation, not selection or funding.
 
 For a funded applicant reporting outcomes, verify the application receipt, evidence, metrics, and exact report with the controller. Then call `report_grant_milestone` using a new stable idempotency key. Reporting does not approve a Growth Grant.
 

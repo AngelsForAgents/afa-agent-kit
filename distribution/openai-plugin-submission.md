@@ -16,21 +16,21 @@
 
 ## Long description
 
-Angels for Agents helps AI agents and their accountable human controllers discover current capital opportunities, assess whether an agent-led venture is ready, validate a structured pitch without submitting it, submit an explicitly authorized application for human review, and report evidence from an existing Proof Grant. Funding is discretionary and never guaranteed. The plugin does not request credentials, private prompts, chain-of-thought, wallet keys, or identity documents.
+Angels for Agents helps AI agents and their accountable human controllers discover current capital and venture resources, assess whether an agent-led venture is ready, validate a structured pitch without submitting it, submit an explicitly authorized application for human review, and report evidence from an existing Proof Grant. Funding is discretionary and never guaranteed. The plugin does not request credentials, private prompts, chain-of-thought, wallet keys, or identity documents.
 
 ## Starter prompts
 
-1. What funding opportunities are currently open for agent-led ventures?
-2. Check whether my agent venture is ready to apply for an AFA Proof Grant.
-3. Validate this AFA pitch without submitting it.
-4. Help me correct the validation errors in this agent venture pitch.
+1. Which AFA venture resources could help my agent-led company reach its next milestone?
+2. What funding opportunities are currently open for agent-led ventures?
+3. Check whether my agent venture is ready to apply for an AFA Proof Grant.
+4. Validate this AFA pitch without submitting it.
 5. Prepare a milestone report for review, but do not submit it until I approve the exact payload.
 
 ## Positive tests
 
-1. **Prompt:** “What agent funding opportunities are open?” **Expected:** Call `get_open_capital_opportunities`; summarize live status and terms; do not imply guaranteed funding.
-2. **Prompt:** “My agent has a prototype, a controller, verifiable usage logs, and a 21-day milestone. Check readiness.” **Expected:** Call `check_pitch_eligibility`; return criterion-level readiness without persisting data.
-3. **Prompt:** “Validate this complete pitch, but do not submit it.” **Expected:** Call `validate_agent_pitch`; return validation result; make no write.
+1. **Prompt:** “Find current AFA venture resources for an agent that needs deployment infrastructure and inspect the best match.” **Expected:** Call `search_venture_resources`, distinguish directory records from AFA-provided entitlements, then call `get_venture_resource` for the selected result before recommending action.
+2. **Prompt:** “What agent funding opportunities are open?” **Expected:** Call `get_open_capital_opportunities`; summarize live status and terms; do not imply guaranteed funding.
+3. **Prompt:** “Check whether this complete pitch is ready and valid, but do not submit it.” **Expected:** Call `check_pitch_eligibility` and `validate_agent_pitch`; return criterion-level readiness and validation errors without persisting data.
 4. **Prompt:** “This is the exact validated pitch. I am the controller and authorize submission. Submit it.” **Expected:** Confirm the exact payload is present, create a stable idempotency key, call `submit_agent_pitch`, and return the receipt without claiming selection.
 5. **Prompt:** “I received Proof Grant application ac_example and authorize this exact evidence report.” **Expected:** Validate the report fields, call `report_grant_milestone` with a fresh idempotency key, and return the report receipt without claiming Growth Grant approval.
 
@@ -42,4 +42,4 @@ Angels for Agents helps AI agents and their accountable human controllers discov
 
 ## Release notes
 
-Initial submission. Adds a public Streamable HTTP MCP server with five tools and accurate read-only, open-world, and destructive annotations. Consequential writes require explicit controller authorization and idempotency keys; all funding decisions remain subject to human review.
+Initial submission. Adds a public Streamable HTTP MCP server with seven tools and accurate read-only, open-world, and destructive annotations. Consequential writes require explicit controller authorization and idempotency keys; all funding decisions remain subject to human review.
