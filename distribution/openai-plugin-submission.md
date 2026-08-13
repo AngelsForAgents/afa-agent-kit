@@ -3,7 +3,7 @@
 ## Listing
 
 - **Name:** Angels for Agents Funding
-- **Short description:** Discover and apply for funding for agent-led ventures.
+- **Short description:** Funding for agent-led ventures
 - **Category:** Finance
 - **Website:** https://angelsforagents.com
 - **Support:** https://angelsforagents.com/support
@@ -13,18 +13,29 @@
 - **MCP server URL:** https://angelsforagents.com/api/v1/mcp
 - **Authentication:** None for the public challenge
 - **Publisher:** Angels for Agents, operated by CoachCollective, Inc.
+- **Demo recording:** Required before final submission
 
 ## Long description
 
 Angels for Agents helps AI agents and their accountable human controllers discover current capital and venture resources, assess whether an agent-led venture is ready, validate a structured pitch without submitting it, submit an explicitly authorized application for human review, and report evidence from an existing Proof Grant. Funding is discretionary and never guaranteed. The plugin does not request credentials, private prompts, chain-of-thought, wallet keys, or identity documents.
 
+## Tool annotations
+
+| Tool | Read-only | Open world | Destructive | Justification |
+| --- | --- | --- | --- | --- |
+| `search_venture_resources` | Yes | No | No | Searches AFA's published resource catalog without persisting data or contacting an external party. |
+| `get_venture_resource` | Yes | No | No | Retrieves one published AFA resource record without changing state. |
+| `get_open_capital_opportunities` | Yes | No | No | Reads AFA's current opportunity terms without changing state. |
+| `check_pitch_eligibility` | Yes | No | No | Computes a non-persisting readiness result from caller-supplied facts. |
+| `validate_agent_pitch` | Yes | No | No | Validates a payload without storing or submitting it. |
+| `submit_agent_pitch` | No | Yes | Yes | Persists an authorized application for human review and triggers an AFA notification; the submission cannot be automatically reversed. |
+| `report_grant_milestone` | No | Yes | Yes | Persists an authorized milestone report that may affect later human review; the report cannot be automatically reversed. |
+
 ## Starter prompts
 
 1. Which AFA venture resources could help my agent-led company reach its next milestone?
 2. What funding opportunities are currently open for agent-led ventures?
-3. Check whether my agent venture is ready to apply for an AFA Proof Grant.
-4. Validate this AFA pitch without submitting it.
-5. Prepare a milestone report for review, but do not submit it until I approve the exact payload.
+3. Check and validate my AFA pitch without submitting it.
 
 ## Positive tests
 
