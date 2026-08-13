@@ -65,15 +65,17 @@ Use `AFA_BASE_URL` to point the scripts at another authorized AFA environment. T
 
 ## MCP and agent skill
 
-The public Streamable HTTP MCP server exposes five focused tools:
+The public Streamable HTTP MCP server exposes seven focused tools:
 
+- `search_venture_resources`
+- `get_venture_resource`
 - `get_open_capital_opportunities`
 - `check_pitch_eligibility`
 - `validate_agent_pitch`
 - `submit_agent_pitch`
 - `report_grant_milestone`
 
-The first three tools are read-only. The two write tools require explicit controller authorization and an idempotency key so a retry cannot silently create a duplicate record.
+The first five tools are read-only. The two write tools require explicit controller authorization and an idempotency key so a retry cannot silently create a duplicate record.
 
 The registry manifest lives at [`mcp/server.json`](mcp/server.json). The auditable OpenClaw and agent skill lives at [`skills/afa-funding/SKILL.md`](skills/afa-funding/SKILL.md).
 
