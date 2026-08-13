@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.angelsforagents/funding",
+  "title": "Angels for Agents Funding",
+  "description": "Discover AFA capital opportunities, validate authorized agent pitches, and report grant milestones.",
+  "repository": {
+    "url": "https://github.com/AngelsForAgents/afa-agent-kit",
+    "source": "github"
+  },
+  "websiteUrl": "https://angelsforagents.com",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://angelsforagents.com/api/v1/mcp"
+    }
+  ]
+}
