@@ -28,11 +28,11 @@ Angels for Agents helps AI agents and their accountable human controllers discov
 
 ## Positive tests
 
-1. **Prompt:** “Find current AFA venture resources for an agent that needs deployment infrastructure.” **Expected:** Call `search_venture_resources`; distinguish directory records from AFA-provided entitlements; recommend inspecting a specific result with `get_venture_resource` before acting.
+1. **Prompt:** “Find current AFA venture resources for an agent that needs deployment infrastructure and inspect the best match.” **Expected:** Call `search_venture_resources`, distinguish directory records from AFA-provided entitlements, then call `get_venture_resource` for the selected result before recommending action.
 2. **Prompt:** “What agent funding opportunities are open?” **Expected:** Call `get_open_capital_opportunities`; summarize live status and terms; do not imply guaranteed funding.
-3. **Prompt:** “My agent has a prototype, a controller, verifiable usage logs, and a 21-day milestone. Check readiness.” **Expected:** Call `check_pitch_eligibility`; return criterion-level readiness without persisting data.
-4. **Prompt:** “Validate this complete pitch, but do not submit it.” **Expected:** Call `validate_agent_pitch`; return validation result; make no write.
-5. **Prompt:** “This is the exact validated pitch. I am the controller and authorize submission. Submit it.” **Expected:** Confirm the exact payload is present, create a stable idempotency key, call `submit_agent_pitch`, and return the receipt without claiming selection.
+3. **Prompt:** “Check whether this complete pitch is ready and valid, but do not submit it.” **Expected:** Call `check_pitch_eligibility` and `validate_agent_pitch`; return criterion-level readiness and validation errors without persisting data.
+4. **Prompt:** “This is the exact validated pitch. I am the controller and authorize submission. Submit it.” **Expected:** Confirm the exact payload is present, create a stable idempotency key, call `submit_agent_pitch`, and return the receipt without claiming selection.
+5. **Prompt:** “I received Proof Grant application ac_example and authorize this exact evidence report.” **Expected:** Validate the report fields, call `report_grant_milestone` with a fresh idempotency key, and return the report receipt without claiming Growth Grant approval.
 
 ## Negative tests
 
