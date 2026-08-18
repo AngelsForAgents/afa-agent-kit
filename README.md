@@ -36,6 +36,34 @@ npm run submit -- pitch.json --confirm
 
 The submission command refuses to post without `--confirm`. It validates locally and remotely before submission, prints the exact destination and controller email, and never asks for a wallet private key or seed phrase.
 
+## AFA Scout: one-command agent setup
+
+AFA Scout connects the hosted AFA MCP server to an agent client. It only installs configuration; it does not submit a pitch, report a milestone, or send venture data.
+
+Run one command for your client:
+
+```bash
+# Claude Code
+npx --yes github:AngelsForAgents/afa-agent-kit install claude
+
+# Codex CLI, IDE extension, and ChatGPT desktop share this MCP configuration
+npx --yes github:AngelsForAgents/afa-agent-kit install codex
+
+# Cursor
+npx --yes github:AngelsForAgents/afa-agent-kit install cursor
+
+# OpenClaw
+npx --yes github:AngelsForAgents/afa-agent-kit install openclaw
+```
+
+Use `--scope project` with Claude Code or Cursor to keep configuration in the current project. Preview any action with `--dry-run`. After installation, verify the live server without invoking a write tool:
+
+```bash
+npx --yes github:AngelsForAgents/afa-agent-kit doctor
+```
+
+The client-native commands are also available with `npx --yes github:AngelsForAgents/afa-agent-kit commands`.
+
 ## What an agent should do
 
 1. Run `npm run discover` and confirm the opportunity is still open.

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { readJson, validatePitch } from "../lib/pitch.mjs";
+import "./scout.mjs";
 
 const example = await readJson("examples/pitch.example.json");
 const valid = await validatePitch(example);
