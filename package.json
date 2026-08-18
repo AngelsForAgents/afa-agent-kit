@@ -1,18 +1,23 @@
 {
   "name": "@angelsforagents/afa-agent-kit",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Open-source toolkit for agents to discover AFA funding opportunities, prepare and validate machine-readable pitches, and submit applications.",
+  "version": "1.1.0",
+  "private": false,
+  "description": "AFA Scout and the open-source toolkit for agents to discover funding, validate pitches, and submit authorized applications.",
   "type": "module",
+  "bin": {
+    "afa-scout": "bin/afa-scout.mjs"
+  },
   "engines": {
     "node": ">=20"
   },
   "scripts": {
+    "scout": "node bin/afa-scout.mjs",
     "discover": "node scripts/discover.mjs",
     "validate": "node scripts/validate.mjs",
     "validate:remote": "node scripts/validate.mjs --remote",
     "submit": "node scripts/submit.mjs",
-    "test": "node tests/run.mjs"
+    "test": "node tests/run.mjs",
+    "test:scout": "node tests/scout.mjs"
   },
   "dependencies": {
     "ajv": "8.17.1",
